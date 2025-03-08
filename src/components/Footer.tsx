@@ -4,23 +4,26 @@ const Footer = () => {
   return (
     <footer className="py-8 px-4 md:px-8 bg-gray-100 dark:bg-[#0B172A] transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
+          {/* Brand and Copyright */}
           <div className="flex flex-col">
             <Link href="/" className="text-xl font-bold text-black dark:text-white mb-1">
               Studytable
             </Link>
             <p className="text-sm text-gray-600 dark:text-gray-300">
-              © 2025 Studytable
+              &copy; 2025 Studytable
             </p>
           </div>
           
+          {/* Notice Board */}
           <div className="flex flex-col">
             <h3 className="font-semibold text-black dark:text-white mb-2">Notice Board</h3>
-            <Link href="/notice" className="text-sm text-gray-600 dark:text-gray-300 hover:text-[#007BFF] dark:hover:text-[#007BFF] transition-colors">
+            <Link href="/notice-board" className="text-sm text-gray-600 dark:text-gray-300 hover:text-[#007BFF] dark:hover:text-[#007BFF] transition-colors">
               View Notices
             </Link>
           </div>
           
+          {/* Socials */}
           <div className="flex flex-col">
             <h3 className="font-semibold text-black dark:text-white mb-2">Socials</h3>
             <div className="flex gap-4">
@@ -37,9 +40,10 @@ const Footer = () => {
             </div>
           </div>
           
+          {/* Blog Links */}
           <div className="flex flex-col">
             <h3 className="font-semibold text-black dark:text-white mb-2">Blog</h3>
-            <ul className="space-y-1">
+            <ul className="space-y-2">
               <li>
                 <Link href="/blog/learning-session" className="text-sm text-gray-600 dark:text-gray-300 hover:text-[#007BFF] dark:hover:text-[#007BFF] transition-colors">
                   How we plan learning session?
