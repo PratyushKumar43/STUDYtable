@@ -16,8 +16,9 @@ const OverviewPage = () => {
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      <main className="max-w-6xl mx-auto px-4 py-12 flex-grow">
-        <div className="flex justify-between items-start mb-8">
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12 flex-grow">
+        {/* Header with logo and CTA button */}
+        <div className="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4">
           <Image 
             src="/logo.png" 
             alt="StudyTable Logo" 
@@ -27,27 +28,28 @@ const OverviewPage = () => {
           />
           <Link 
             href="/signup" 
-            className="bg-black text-white px-6 py-2 rounded-md hover:bg-gray-800 transition-colors"
+            className="bg-black text-white px-6 py-2 rounded-md hover:bg-gray-800 transition-colors w-full sm:w-auto text-center"
           >
             Apply for admission
           </Link>
         </div>
 
-        <div className="flex gap-16">
-          {/* Left Sidebar */}
-          <div className="w-64">
-            <h2 className="text-xl mb-6">Overview</h2>
-            <div className="space-y-3 text-gray-500">
-              <p>Product Strategy</p>
-              <p>By Learning</p>
-              <p>By Assessing</p>
-              <p>By managing</p>
+        {/* Main content area with sidebar and content */}
+        <div className="flex flex-col md:flex-row gap-8 md:gap-16">
+          {/* Left Sidebar - Hidden on mobile, shown as tabs */}
+          <div className="w-full md:w-64 mb-6 md:mb-0">
+            <h2 className="text-xl mb-4 font-medium">Overview</h2>
+            <div className="flex md:flex-col overflow-x-auto pb-2 md:pb-0 space-x-4 md:space-x-0 md:space-y-3 text-gray-500">
+              <p className="whitespace-nowrap md:whitespace-normal">Product Strategy</p>
+              <p className="whitespace-nowrap md:whitespace-normal">By Learning</p>
+              <p className="whitespace-nowrap md:whitespace-normal">By Assessing</p>
+              <p className="whitespace-nowrap md:whitespace-normal">By managing</p>
             </div>
           </div>
 
           {/* Main Content */}
           <div className="flex-1">
-            <h1 className="text-3xl text-center font-bold mb-8">Product strategy</h1>
+            <h1 className="text-2xl sm:text-3xl text-center font-bold mb-6 sm:mb-8">Product strategy</h1>
             
             <div className="space-y-6 text-gray-800">
               <p className="text-justify">
@@ -58,7 +60,7 @@ const OverviewPage = () => {
                 <p className="mb-4 text-justify">
                   <span className="font-semibold">That second part</span> constitutes reading, doing questions, revising topic, mock test, practice sheets, managing study, different subjects, different exams and a lot more that can be comprehend. Our focus in this iteration is on three core parts
                 </p>
-                <div className="space-y-1 ml-4 mb-12">
+                <div className="space-y-1 ml-4 mb-8 sm:mb-12">
                   <p>I. Learning</p>
                   <p>II. Assessing</p>
                   <p>III. Managing</p>
@@ -66,12 +68,12 @@ const OverviewPage = () => {
               </div>
 
               {/* By Learning Section */}
-              <section>
-                <h2 className="text-3xl text-center font-bold mb-8">By Learning</h2>
+              <section className="mb-10">
+                <h2 className="text-2xl sm:text-3xl text-center font-bold mb-6 sm:mb-8">By Learning</h2>
                 <p className="mb-4 text-justify">
                   It means learning by reading and practicing questions. I am breaking it for two parts.
                 </p>
-                <ol className="list-decimal list-inside mb-6 ml-4 space-y-1">
+                <ol className="list-decimal list-inside mb-6 ml-2 sm:ml-4 space-y-1">
                   <li>First time learning and growing: Linear move</li>
                   <li>Revision and Reassuring</li>
                 </ol>
@@ -93,19 +95,19 @@ const OverviewPage = () => {
               </section>
 
               {/* By Assessing Section */}
-              <section>
-                <h2 className="text-3xl text-center font-bold mb-8">By Assessing</h2>
+              <section className="mb-10">
+                <h2 className="text-2xl sm:text-3xl text-center font-bold mb-6 sm:mb-8">By Assessing</h2>
                 <p className="mb-4 text-justify">
                   It means trying practice sheets, exams, and trying to understand where they land. Primarily, assessment happens in two ways.
                 </p>
-                <ol className="list-[lower-alpha] list-inside mb-4 ml-4 space-y-1">
+                <ol className="list-[lower-alpha] list-inside mb-4 ml-2 sm:ml-4 space-y-1">
                   <li>When a teacher asks a question to the whole class and demands for the answer.</li>
                   <li>Test series. Many students create their own exam sessions and try to assess them.</li>
                 </ol>
                 <p className="mb-4 text-justify">
                   The problem with these assessments are:
                 </p>
-                <ol className="list-decimal list-inside mb-6 ml-4 space-y-1">
+                <ol className="list-decimal list-inside mb-6 ml-2 sm:ml-4 space-y-1">
                   <li>They are in general.</li>
                   <li>They are on a fixed time.</li>
                   <li>It takes time to get the result.</li>
@@ -124,8 +126,8 @@ const OverviewPage = () => {
               </section>
 
               {/* By Managing Section */}
-              <section>
-                <h2 className="text-3xl text-center font-bold mb-8">By Managing</h2>
+              <section className="mb-10">
+                <h2 className="text-2xl sm:text-3xl text-center font-bold mb-6 sm:mb-8">By Managing</h2>
                 <p className="mb-4 text-justify">
                   It means keeping track of what happens in learning and assessing along with exams, schools, and other factors that affect their life and are key aspects of their learning.
                 </p>
@@ -144,11 +146,11 @@ const OverviewPage = () => {
               </section>
 
               {/* Call to Action Section */}
-              <section className="mt-12 pt-6 border-t text-center">
-                <h3 className="text-3xl text-center font-bold mb-8">Crafted for your all academic needs</h3>
+              <section className="mt-10 pt-6 border-t text-center">
+                <h3 className="text-2xl sm:text-3xl text-center font-bold mb-6 sm:mb-8">Crafted for your all academic needs</h3>
                 <Link 
                   href="/signup" 
-                  className="inline-block bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800 transition-colors"
+                  className="inline-block bg-black text-white px-6 sm:px-8 py-2 sm:py-3 rounded-md hover:bg-gray-800 transition-colors w-full sm:w-auto text-center"
                 >
                   Get your Entry
                 </Link>
